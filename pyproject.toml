@@ -2,7 +2,7 @@
 name = "llm-guard"
 description = "LLM-Guard is a comprehensive tool designed to fortify the security of Large Language Models (LLMs). By offering sanitization, detection of harmful language, prevention of data leakage, and resistance against prompt injection attacks, LLM-Guard ensures that your interactions with LLMs remain safe and secure."
 authors = [
-  { name = "Protect AI", email = "community@protectai.com"}
+  { name = "UnoDomination" }
 ]
 keywords = ["llm", "language model", "security", "adversarial attacks", "prompt injection", "prompt leakage", "PII detection", "self-hardening", "firewall"]
 license = { file="LICENSE" }
@@ -60,11 +60,11 @@ dev = [
 ]
 
 [project.urls]
-homepage = "https://github.com/protectai/llm-guard"
-documentation = "https://protectai.github.io/llm-guard/"
-repository = "https://github.com/protectai/llm-guard"
-issues = "https://github.com/protectai/llm-guard/issues"
-changelog = "https://protectai.github.io/llm-guard/changelog/"
+homepage = "https://github.com/UnoDomination/llm-guard"
+documentation = "https://github.com/UnoDomination/llm-guard/tree/main/docs"
+repository = "https://github.com/UnoDomination/llm-guard"
+issues = "https://github.com/UnoDomination/llm-guard/issues"
+changelog = "https://github.com/UnoDomination/llm-guard/blob/main/docs/changelog.md"
 
 [tool.setuptools]
 packages = {find = {where=["."], include=["llm_guard", "llm_guard.*"]}}

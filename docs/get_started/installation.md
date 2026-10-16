@@ -14,29 +14,33 @@ Supported Python versions:
 
     Consider installing the LLM Guard python packages on a virtual environment like `venv` or `conda`.
 
+Install from this repository (recommended):
+
 ```bash
-pip install llm-guard
+pip install git+https://github.com/UnoDomination/llm-guard.git
 ```
 
-If you have issue installing the package due to missing `torch`, you can try the following commands:
+> The PyPI name `llm-guard` still points at the last upstream release. Prefer installing from this repo.
+
+If you have issues installing due to missing `torch`, try:
 
 ```bash
 pip install wheel
 pip install torch==2.0.1
-pip install llm-guard --no-build-isolation
+pip install "git+https://github.com/UnoDomination/llm-guard.git" --no-build-isolation
 ```
 
 ## Install from source
 
-To install LLM Guard from source, first clone the repo:
+Clone the repo:
 
 - Using HTTPS
 ```bash
-git clone https://github.com/protectai/llm-guard.git
+git clone https://github.com/UnoDomination/llm-guard.git
 ```
 - Using SSH
 ```bash
-git clone git@github.com:protectai/llm-guard.git
+git clone git@github.com:UnoDomination/llm-guard.git
 ```
 
 We recommend to use a virtual environment like `venv` or `conda` to install the package.

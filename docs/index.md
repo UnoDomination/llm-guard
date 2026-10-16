@@ -1,58 +1,38 @@
-# LLM Guard - The Security Toolkit for LLM Interactions
+# LLM Guard
 
-LLM Guard by [Protect AI](https://protectai.com/llm-guard) is a comprehensive tool designed to fortify the security of Large Language Models (LLMs).
+The Security Toolkit for LLM Interactions.
 
-[**Playground**](https://huggingface.co/spaces/ProtectAI/llm-guard-playground) | [**Changelog**](./changelog.md)
+**Actively maintained** community fork. Upstream was archived; development continues here under the MIT license.
 
-<a href="https://mlsecops.com/slack"><img src="./assets/join-our-slack-community.png" width="200" alt="Join Our Slack Community"></a>
+[**Changelog**](./changelog.md) | [**GitHub**](https://github.com/UnoDomination/llm-guard) | [**Issues**](https://github.com/UnoDomination/llm-guard/issues)
 
 ## What is LLM Guard?
 
 ![LLM-Guard](./assets/flow.png)
 
-By offering sanitization, detection of harmful language, prevention of data leakage, and resistance against prompt
-injection attacks, LLM-Guard ensures that your interactions with LLMs remain safe and secure.
+LLM Guard sanitizes prompts and model outputs so LLM apps stay safer in production. It helps with prompt injection resistance, PII and secrets leakage prevention, toxicity and policy filtering, and output checks (JSON, URLs, refusals, relevance, and more).
 
 ## Installation
 
-Begin your journey with LLM Guard by downloading the package:
+Install from this repository:
 
 ```sh
-pip install llm-guard
+pip install git+https://github.com/UnoDomination/llm-guard.git
 ```
 
-## Getting Started
+Requires Python 3.9+. See [Installation](./get_started/installation.md) for more options.
 
-**Important Notes**:
+## Getting started
 
-- LLM Guard is designed for easy integration and deployment in production environments. While it's ready to use
-  out-of-the-box, please be informed that we're constantly improving and updating the repository.
-- Base functionality requires a limited number of libraries. As you explore more advanced features, necessary libraries
-  will be automatically installed.
-- Ensure you're using Python version 3.9 or higher. Confirm with: `python --version`.
-- Library installation issues? Consider upgrading pip: `python -m pip install --upgrade pip`.
+- [ChatGPT + LLM Guard](https://github.com/UnoDomination/llm-guard/blob/main/examples/openai_api.py)
+- [Installation](./get_started/installation.md)
 
-**Examples**:
+## Community and contributing
 
-- Get started with [ChatGPT and LLM Guard](https://github.com/protectai/llm-guard/blob/main/examples/openai_api.py).
+- Star the [repo](https://github.com/UnoDomination/llm-guard) if this is useful
+- Open an [issue](https://github.com/UnoDomination/llm-guard/issues)
+- Read [CONTRIBUTING.md](https://github.com/UnoDomination/llm-guard/blob/main/CONTRIBUTING.md) before opening a PR
 
-## Community, Contributing, Docs & Support
+## Credits
 
-LLM Guard is an open source solution.
-We are committed to a transparent development process and highly appreciate any contributions.
-Whether you are helping us fix bugs, propose new features, improve our documentation or spread the word,
-we would love to have you as part of our community.
-
-- Give us a ⭐️ github star ⭐️ on the top of this page to support what we're doing,
-  it means a lot for open source projects!
-- Read our
-  [docs](https://protectai.github.io/llm-guard/)
-  for more info about how to use and customize deepchecks, and for step-by-step tutorials.
-- Post a [Github
-  Issue](https://github.com/protectai/llm-guard/issues) to submit a bug report, feature request, or suggest an improvement.
-- To contribute to the package, check out our [contribution guidelines](https://github.com/protectai/llm-guard/blob/main/CONTRIBUTING.md), and open a PR.
-
-Join our Slack to give us feedback, connect with the maintainers and fellow users, ask questions,
-get help for package usage or contributions, or engage in discussions about LLM security!
-
-<a href="https://mlsecops.com/slack"><img src="./assets/join-our-slack-community.png" width="200" alt="Join Our Slack Community"></a>
+Originally created by [Protect AI](https://github.com/protectai/llm-guard) (MIT). This fork is independently maintained and is not affiliated with Protect AI or Palo Alto Networks.

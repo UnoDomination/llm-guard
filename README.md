@@ -1,124 +1,100 @@
-> [!NOTE]
-> **Community-maintained fork.** The upstream [protectai/llm-guard](https://github.com/protectai/llm-guard) repository was archived on Jul 9, 2026 and is no longer maintained. This fork continues development under the MIT license. Upstream Hugging Face models are also unmaintained — we will refresh or replace them over time.
->
-> Original project by [Protect AI](https://protectai.com/). Not affiliated with Protect AI or Palo Alto Networks.
+# LLM Guard
 
-# LLM Guard - The Security Toolkit for LLM Interactions
+The Security Toolkit for LLM Interactions.
 
-LLM Guard is a comprehensive tool designed to fortify the security of Large Language Models (LLMs).
+**Actively maintained** community fork of the original Protect AI project. Upstream was archived; development continues here under the MIT license.
 
-[**Documentation**](https://protectai.github.io/llm-guard/) | [**Playground**](https://huggingface.co/spaces/ProtectAI/llm-guard-playground) | [**Changelog**](https://protectai.github.io/llm-guard/changelog/)
+[**Documentation**](./docs/index.md) | [**Changelog**](./docs/changelog.md) | [**Issues**](https://github.com/UnoDomination/llm-guard/issues)
 
-[![GitHub
-stars](https://img.shields.io/github/stars/UnoDomination/llm-guard.svg?style=social&label=Star&maxAge=2592000)](https://github.com/UnoDomination/llm-guard/stargazers/)
+[![GitHub stars](https://img.shields.io/github/stars/UnoDomination/llm-guard.svg?style=social&label=Star)](https://github.com/UnoDomination/llm-guard/stargazers)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![PyPI - Python Version](https://img.shields.io/pypi/v/llm-guard)](https://pypi.org/project/llm-guard)
-
-> **Install note:** `pip install llm-guard` still points at the last upstream release on PyPI (`0.3.16`). Install from this repo until a community package is published:
->
-> ```sh
-> pip install git+https://github.com/UnoDomination/llm-guard.git
-> ```
 
 ## What is LLM Guard?
 
-![LLM-Guard](https://github.com/protectai/llm-guard/blob/main/docs/assets/flow.png?raw=true)
+LLM Guard sanitizes prompts and model outputs so LLM apps stay safer in production. It helps with:
 
-By offering sanitization, detection of harmful language, prevention of data leakage, and resistance against prompt
-injection attacks, LLM-Guard ensures that your interactions with LLMs remain safe and secure.
+- Prompt injection resistance
+- PII and secrets leakage prevention
+- Toxicity and policy filtering
+- Output checks (JSON, URLs, refusals, relevance, and more)
 
 ## Installation
 
-Begin your journey with LLM Guard by downloading the package:
+Install from this repository:
 
 ```sh
-pip install llm-guard
+pip install git+https://github.com/UnoDomination/llm-guard.git
 ```
 
-## Getting Started
+> The PyPI package name `llm-guard` still serves the last upstream release (`0.3.16`). Prefer installing from this repo until a community package is published.
 
-**Important Notes**:
+Requires **Python 3.9+**. If install fails, try upgrading pip:
 
-- LLM Guard is designed for easy integration and deployment in production environments. While it's ready to use
-  out-of-the-box, please be informed that we're constantly improving and updating the repository.
-- Base functionality requires a limited number of libraries. As you explore more advanced features, necessary libraries
-  will be automatically installed.
-- Ensure you're using Python version 3.9 or higher. Confirm with: `python --version`.
-- Library installation issues? Consider upgrading pip: `python -m pip install --upgrade pip`.
+```sh
+python -m pip install --upgrade pip
+```
 
-**Examples**:
+## Getting started
 
-- Get started with [ChatGPT and LLM Guard](./examples/openai_api.py).
-- Deploy LLM Guard as [API](https://protectai.github.io/llm-guard/api/overview/)
+**Examples:**
+
+- [ChatGPT + LLM Guard](./examples/openai_api.py)
+- [API deployment](./docs/api/overview.md)
 
 ## Supported scanners
 
 ### Prompt scanners
 
-- [Anonymize](https://protectai.github.io/llm-guard/input_scanners/anonymize/)
+- [Anonymize](./docs/input_scanners/anonymize.md)
 - [BanCode](./docs/input_scanners/ban_code.md)
-- [BanCompetitors](https://protectai.github.io/llm-guard/input_scanners/ban_competitors/)
-- [BanSubstrings](https://protectai.github.io/llm-guard/input_scanners/ban_substrings/)
-- [BanTopics](https://protectai.github.io/llm-guard/input_scanners/ban_topics/)
-- [Code](https://protectai.github.io/llm-guard/input_scanners/code/)
-- [Gibberish](https://protectai.github.io/llm-guard/input_scanners/gibberish/)
-- [InvisibleText](https://protectai.github.io/llm-guard/input_scanners/invisible_text/)
-- [Language](https://protectai.github.io/llm-guard/input_scanners/language/)
-- [PromptInjection](https://protectai.github.io/llm-guard/input_scanners/prompt_injection/)
-- [Regex](https://protectai.github.io/llm-guard/input_scanners/regex/)
-- [Secrets](https://protectai.github.io/llm-guard/input_scanners/secrets/)
-- [Sentiment](https://protectai.github.io/llm-guard/input_scanners/sentiment/)
-- [TokenLimit](https://protectai.github.io/llm-guard/input_scanners/token_limit/)
-- [Toxicity](https://protectai.github.io/llm-guard/input_scanners/toxicity/)
+- [BanCompetitors](./docs/input_scanners/ban_competitors.md)
+- [BanSubstrings](./docs/input_scanners/ban_substrings.md)
+- [BanTopics](./docs/input_scanners/ban_topics.md)
+- [Code](./docs/input_scanners/code.md)
+- [Gibberish](./docs/input_scanners/gibberish.md)
+- [InvisibleText](./docs/input_scanners/invisible_text.md)
+- [Language](./docs/input_scanners/language.md)
+- [PromptInjection](./docs/input_scanners/prompt_injection.md)
+- [Regex](./docs/input_scanners/regex.md)
+- [Secrets](./docs/input_scanners/secrets.md)
+- [Sentiment](./docs/input_scanners/sentiment.md)
+- [TokenLimit](./docs/input_scanners/token_limit.md)
+- [Toxicity](./docs/input_scanners/toxicity.md)
 
 ### Output scanners
 
 - [BanCode](./docs/output_scanners/ban_code.md)
-- [BanCompetitors](https://protectai.github.io/llm-guard/output_scanners/ban_competitors/)
-- [BanSubstrings](https://protectai.github.io/llm-guard/output_scanners/ban_substrings/)
-- [BanTopics](https://protectai.github.io/llm-guard/output_scanners/ban_topics/)
-- [Bias](https://protectai.github.io/llm-guard/output_scanners/bias/)
-- [Code](https://protectai.github.io/llm-guard/output_scanners/code/)
-- [Deanonymize](https://protectai.github.io/llm-guard/output_scanners/deanonymize/)
-- [JSON](https://protectai.github.io/llm-guard/output_scanners/json/)
-- [Language](https://protectai.github.io/llm-guard/output_scanners/language/)
-- [LanguageSame](https://protectai.github.io/llm-guard/output_scanners/language_same/)
-- [MaliciousURLs](https://protectai.github.io/llm-guard/output_scanners/malicious_urls/)
-- [NoRefusal](https://protectai.github.io/llm-guard/output_scanners/no_refusal/)
-- [ReadingTime](https://protectai.github.io/llm-guard/output_scanners/reading_time/)
-- [FactualConsistency](https://protectai.github.io/llm-guard/output_scanners/factual_consistency/)
-- [Gibberish](https://protectai.github.io/llm-guard/output_scanners/gibberish/)
-- [Regex](https://protectai.github.io/llm-guard/output_scanners/regex/)
-- [Relevance](https://protectai.github.io/llm-guard/output_scanners/relevance/)
-- [Sensitive](https://protectai.github.io/llm-guard/output_scanners/sensitive/)
-- [Sentiment](https://protectai.github.io/llm-guard/output_scanners/sentiment/)
-- [Toxicity](https://protectai.github.io/llm-guard/output_scanners/toxicity/)
-- [URLReachability](https://protectai.github.io/llm-guard/output_scanners/url_reachability/)
+- [BanCompetitors](./docs/output_scanners/ban_competitors.md)
+- [BanSubstrings](./docs/output_scanners/ban_substrings.md)
+- [BanTopics](./docs/output_scanners/ban_topics.md)
+- [Bias](./docs/output_scanners/bias.md)
+- [Code](./docs/output_scanners/code.md)
+- [Deanonymize](./docs/output_scanners/deanonymize.md)
+- [JSON](./docs/output_scanners/json.md)
+- [Language](./docs/output_scanners/language.md)
+- [LanguageSame](./docs/output_scanners/language_same.md)
+- [MaliciousURLs](./docs/output_scanners/malicious_urls.md)
+- [NoRefusal](./docs/output_scanners/no_refusal.md)
+- [ReadingTime](./docs/output_scanners/reading_time.md)
+- [FactualConsistency](./docs/output_scanners/factual_consistency.md)
+- [Gibberish](./docs/output_scanners/gibberish.md)
+- [Regex](./docs/output_scanners/regex.md)
+- [Relevance](./docs/output_scanners/relevance.md)
+- [Sensitive](./docs/output_scanners/sensitive.md)
+- [Sentiment](./docs/output_scanners/sentiment.md)
+- [Toxicity](./docs/output_scanners/toxicity.md)
+- [URLReachability](./docs/output_scanners/url_reachability.md)
 
-## Community, Contributing, Docs & Support
+## Community and contributing
 
-LLM Guard is an open source solution.
-We are committed to a transparent development process and highly appreciate any contributions.
-Whether you are helping us fix bugs, propose new features, improve our documentation or spread the word,
-we would love to have you as part of our community.
+Contributions are welcome: bug reports, features, docs, and PRs.
 
-- Give us a ⭐️ github star ⭐️ on the top of this page to support what we're doing,
-  it means a lot for open source projects!
-- Read our
-  [docs](https://protectai.github.io/llm-guard/)
-  for more info about how to use and customize LLM Guard, and for step-by-step tutorials.
-- Post a [Github
-  Issue](https://github.com/protectai/llm-guard/issues) to submit a bug report, feature request, or suggest an improvement.
-- To contribute to the package, check out our [contribution guidelines](CONTRIBUTING.md), and open a PR.
+- Star the repo if this is useful
+- Open an [issue](https://github.com/UnoDomination/llm-guard/issues)
+- Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a PR
+- Browse [docs](./docs/index.md)
 
-Join our Slack to give us feedback, connect with the maintainers and fellow users, ask questions,
-get help for package usage or contributions, or engage in discussions about LLM security!
+## Credits
 
-<a href="https://mlsecops.com/slack"><img src="https://github.com/protectai/llm-guard/blob/main/docs/assets/join-our-slack-community.png?raw=true" width="200" alt="Join Our Slack Community"></a>
-
-### Production Support
-
-We're eager to provide personalized assistance when deploying your LLM Guard to a production environment.
-
-- [Send Email ✉️](mailto:community@protectai.com)
+Originally created by [Protect AI](https://github.com/protectai/llm-guard) (MIT). This fork is independently maintained and is not affiliated with Protect AI or Palo Alto Networks.

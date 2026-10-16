@@ -4,7 +4,7 @@
 
 ## Reporting Issues
 
-If you would like to report a bug, request a new feature or enhancement, follow [this link](https://github.com/protectai/llm-guard/issues/new/choose).
+If you would like to report a bug, request a new feature or enhancement, open an issue at [UnoDomination/llm-guard](https://github.com/UnoDomination/llm-guard/issues/new).
 
 ## Submitting Changes
 
@@ -17,7 +17,7 @@ If you would like to report a bug, request a new feature or enhancement, follow 
 
 ```bash
 # clone the repo
-git clone -b dev https://github.com/protectai/llm-guard.git
+git clone https://github.com/UnoDomination/llm-guard.git
 cd llm-guard
 
 # create a virtual environment

@@ -2,9 +2,9 @@
 
 ## Reporting a Vulnerability
 
-We take the security of our software products seriously, which includes not only the code base but also the scanners provided within. If you have found any issues that might have security implications, please send a report to [security@protectai.com].
+We take the security of this project seriously, including the scanners. If you find a security issue, please email the maintainer via your GitHub profile contact on [UnoDomination](https://github.com/UnoDomination), or open a **private** security advisory on GitHub if available.
 
-**Do NOT open an issue on the GitHub repository, as doing so makes it public knowledge.**
+**Do NOT open a public issue for vulnerabilities.**
 
 Your report should include:
 

@@ -2,7 +2,7 @@
 name = "llm-guard-api"
 description = "LLM Guard API is a deployment of LLM Guard as an API."
 authors = [
-  { name = "Protect AI", email = "community@protectai.com"}
+  { name = "UnoDomination" }
 ]
 readme = "README.md"
 dynamic = ["version"]

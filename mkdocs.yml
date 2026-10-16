@@ -1,13 +1,13 @@
 site_name: LLM Guard
-site_author: Protect AI, Inc.
-site_description: LLM Guard is a comprehensive tool designed to fortify the security of Large Language Models (LLMs).
-site_url: https://protectai.github.io/llm-guard
-repo_url: https://github.com/protectai/llm-guard
-repo_name: protectai/llm-guard
+site_author: UnoDomination
+site_description: The Security Toolkit for LLM Interactions. Actively maintained community fork.
+site_url: https://github.com/UnoDomination/llm-guard
+repo_url: https://github.com/UnoDomination/llm-guard
+repo_name: UnoDomination/llm-guard
 edit_uri: ""
 
 copyright: |
-  Maintained by <a href="https://protectai.com">Protect AI, Inc.</a>.
+  Actively maintained at <a href="https://github.com/UnoDomination/llm-guard">UnoDomination/llm-guard</a>. Originally by Protect AI (MIT).
 
 theme:
   name: material
@@ -81,19 +81,8 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/ProtectAICorp
     - icon: fontawesome/brands/github
-      link: https://github.com/protectai
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/protect-ai
-    - icon: fontawesome/brands/slack
-      link: https://mlsecops.com/slack
-    - icon: fontawesome/solid/globe
-      link: https://protectai.com/llm-guard
-  analytics:
-    provider: google
-    property: G-B76J8KGG5Z
+      link: https://github.com/UnoDomination/llm-guard
 
 nav:
   - Get Started:
