@@ -42,6 +42,12 @@ from llm_guard.input_scanners.secrets import Secrets
             True,
             -1.0,
         ),  # False-positive
+        (
+            "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c and 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",  # gitleaks:allow
+            "JWT ****** and ******",
+            False,
+            1.0,
+        ),  # Multiple secrets — redaction must not corrupt offsets (upstream #335)
     ],
 )
 def test_scan(prompt, expected_prompt, expected_valid, expected_score):
