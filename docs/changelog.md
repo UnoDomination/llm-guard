@@ -5,19 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 0.3.17
+## [Unreleased] - 0.3.17 (community fork)
 
-### Added
--
+Community-maintained continuation after upstream archive. Ports open PRs/issues from protectai/llm-guard.
 
 ### Fixed
--
+- Secrets redaction offset corruption with multiple secrets (upstream [#335](https://github.com/protectai/llm-guard/pull/335)).
+- Replace dangerous `assert`s with proper exceptions (upstream [#332](https://github.com/protectai/llm-guard/pull/332)).
+- API config path traversal mitigation via `realpath` allowlist (upstream [#323](https://github.com/protectai/llm-guard/pull/323)).
+- MaliciousURLs: ensure `top_k` is set in `pipeline_kwargs` (upstream [#339](https://github.com/protectai/llm-guard/pull/339)).
+- BanTopics docs: default threshold documented as `0.6` (upstream [#334](https://github.com/protectai/llm-guard/pull/334)).
 
 ### Changed
--
-
-### Removed
--
+- Bump `transformers` to `4.53.0` for known CVEs (upstream [#313](https://github.com/protectai/llm-guard/issues/313) / [#309](https://github.com/protectai/llm-guard/pull/309)).
+- Bump `presidio-analyzer` / `presidio-anonymizer` to `2.2.364` (cryptography ≥46 for CVE-2026-26007; upstream [#342](https://github.com/protectai/llm-guard/issues/342)).
+- Relax `json-repair` pin to `>=0.44.1,<1` (upstream [#308](https://github.com/protectai/llm-guard/pull/308)).
+- Bump `optimum` onnx extras to `1.27.0`.
+- GitHub Actions: checkout/setup-python v6, cache v5, codeql v4.39.0.
 
 ## [0.3.16] - 2025-05-19
 
