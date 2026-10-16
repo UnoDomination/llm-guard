@@ -1,23 +1,24 @@
-# LLM Guard
+> [!NOTE]
+> **Actively maintained here.** Upstream [protectai/llm-guard](https://github.com/protectai/llm-guard) was archived. This community fork continues development under the MIT license.
 
-The Security Toolkit for LLM Interactions.
+# LLM Guard - The Security Toolkit for LLM Interactions
 
-**Actively maintained** community fork of the original Protect AI project. Upstream was archived; development continues here under the MIT license.
+LLM Guard is a comprehensive tool designed to fortify the security of Large Language Models (LLMs).
 
 [**Documentation**](./docs/index.md) | [**Changelog**](./docs/changelog.md) | [**Issues**](https://github.com/UnoDomination/llm-guard/issues)
 
-[![GitHub stars](https://img.shields.io/github/stars/UnoDomination/llm-guard.svg?style=social&label=Star)](https://github.com/UnoDomination/llm-guard/stargazers)
+[![GitHub
+stars](https://img.shields.io/github/stars/UnoDomination/llm-guard.svg?style=social&label=Star&maxAge=2592000)](https://github.com/UnoDomination/llm-guard/stargazers/)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 
 ## What is LLM Guard?
 
-LLM Guard sanitizes prompts and model outputs so LLM apps stay safer in production. It helps with:
+![LLM-Guard](docs/assets/flow.png)
 
-- Prompt injection resistance
-- PII and secrets leakage prevention
-- Toxicity and policy filtering
-- Output checks (JSON, URLs, refusals, relevance, and more)
+By offering sanitization, detection of harmful language, prevention of data leakage, and resistance against prompt
+injection attacks, LLM-Guard ensures that your interactions with LLMs remain safe and secure.
 
 ## Installation
 
@@ -27,20 +28,21 @@ Install from this repository:
 pip install git+https://github.com/UnoDomination/llm-guard.git
 ```
 
-> The PyPI package name `llm-guard` still serves the last upstream release (`0.3.16`). Prefer installing from this repo until a community package is published.
+> The PyPI package name `llm-guard` still points at the last upstream release (`0.3.16`). Prefer installing from this repo until a community package is published.
 
-Requires **Python 3.9+**. If install fails, try upgrading pip:
+## Getting Started
 
-```sh
-python -m pip install --upgrade pip
-```
+**Important Notes**:
 
-## Getting started
+- LLM Guard is designed for easy integration and deployment in production environments.
+- Base functionality requires a limited number of libraries. As you explore more advanced features, necessary libraries will be automatically installed.
+- Ensure you're using Python version 3.9 or higher. Confirm with: `python --version`.
+- Library installation issues? Consider upgrading pip: `python -m pip install --upgrade pip`.
 
-**Examples:**
+**Examples**:
 
-- [ChatGPT + LLM Guard](./examples/openai_api.py)
-- [API deployment](./docs/api/overview.md)
+- Get started with [ChatGPT and LLM Guard](./examples/openai_api.py).
+- Deploy LLM Guard as [API](./docs/api/overview.md)
 
 ## Supported scanners
 
@@ -86,14 +88,18 @@ python -m pip install --upgrade pip
 - [Toxicity](./docs/output_scanners/toxicity.md)
 - [URLReachability](./docs/output_scanners/url_reachability.md)
 
-## Community and contributing
+## Community, Contributing, Docs & Support
 
-Contributions are welcome: bug reports, features, docs, and PRs.
+LLM Guard is an open source solution.
+We are committed to a transparent development process and highly appreciate any contributions.
+Whether you are helping us fix bugs, propose new features, improve our documentation or spread the word,
+we would love to have you as part of our community.
 
-- Star the repo if this is useful
-- Open an [issue](https://github.com/UnoDomination/llm-guard/issues)
-- Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a PR
-- Browse [docs](./docs/index.md)
+- Give us a ⭐️ github star ⭐️ on the top of this page to support what we're doing,
+  it means a lot for open source projects!
+- Read our [docs](./docs/index.md) for more info about how to use and customize LLM Guard.
+- Post a [GitHub Issue](https://github.com/UnoDomination/llm-guard/issues) to submit a bug report, feature request, or suggest an improvement.
+- To contribute to the package, check out our [contribution guidelines](./CONTRIBUTING.md), and open a PR.
 
 ## Credits
 
