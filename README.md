@@ -1,5 +1,5 @@
 > [!NOTE]
-> **Actively maintained here.** Upstream [protectai/llm-guard](https://github.com/protectai/llm-guard) was archived. This community fork continues development under the MIT license.
+> **Open source · actively maintained here.** Upstream [protectai/llm-guard](https://github.com/protectai/llm-guard) was archived. This community fork continues development under the MIT license.
 
 # LLM Guard - The Security Toolkit for LLM Interactions
 
