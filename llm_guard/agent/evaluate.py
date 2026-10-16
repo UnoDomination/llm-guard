@@ -6,12 +6,16 @@ from typing import Any
 
 from llm_guard.util import get_logger
 
+from .cascading import CascadingFailure
 from .code_act import CodeAct
 from .decode_normalize import DecodeNormalize
 from .fake_approval import FakeApproval
 from .goal_drift import GoalDrift
 from .identity_privilege import IdentityPrivilege
+from .inter_agent import InterAgentMessage
 from .memory_write import MemoryWrite
+from .rogue_agent import RogueAgent
+from .supply_chain import SupplyChain
 from .tool_call_allowlist import ToolCallAllowlist
 from .tool_result import ToolResult
 
@@ -84,24 +88,33 @@ def default_agent_scanners() -> dict[str, list]:
             FakeApproval(),
             IdentityPrivilege(),
             GoalDrift(),
+            InterAgentMessage(),
+            SupplyChain(),
+            CascadingFailure(),
+            RogueAgent(),
             CodeAct(),
+            ToolCallAllowlist(),
         ],
         "tool_call": [
             ToolCallAllowlist(),
             CodeAct(),
             FakeApproval(),
             IdentityPrivilege(),
+            SupplyChain(),
         ],
         "tool_result": [
             ToolResult(),
             DecodeNormalize(),
             FakeApproval(),
+            CodeAct(),
+            RogueAgent(),
         ],
         "memory": [
             MemoryWrite(),
             DecodeNormalize(),
             IdentityPrivilege(),
             CodeAct(),
+            FakeApproval(),
         ],
     }
 

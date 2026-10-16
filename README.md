@@ -17,8 +17,7 @@ stars](https://img.shields.io/github/stars/UnoDomination/llm-guard.svg?style=soc
 
 ![LLM-Guard](docs/assets/flow.png)
 
-By offering sanitization, detection of harmful language, prevention of data leakage, and resistance against prompt
-injection attacks, LLM-Guard ensures that your interactions with LLMs remain safe and secure.
+Open-source guardrails for LLM apps **and agents**: sanitize prompts/outputs, block prompt injection, stop secret leaks, and enforce **tool / memory / HITL** policy on each agent step.
 
 ## Installation
 
@@ -32,19 +31,48 @@ pip install git+https://github.com/UnoDomination/llm-guard.git
 
 ## Getting Started
 
-**Important Notes**:
+```python
+from llm_guard import scan_prompt, scan_agent_step
+from llm_guard.input_scanners import PromptInjection, Secrets
+from llm_guard.agent import ToolCallAllowlist, ToolResult
 
-- LLM Guard is designed for easy integration and deployment in production environments.
-- Base functionality requires a limited number of libraries. As you explore more advanced features, necessary libraries will be automatically installed.
-- Ensure you're using Python version 3.9 or higher. Confirm with: `python --version`.
-- Library installation issues? Consider upgrading pip: `python -m pip install --upgrade pip`.
+# Classic prompt scanning
+sanitized, valid, scores = scan_prompt([PromptInjection(), Secrets()], user_text)
 
-**Examples**:
+# Agentic step (OWASP Agentic ASI-oriented controls)
+result = scan_agent_step(
+    user_prompt=user_text,
+    tool_call={"name": "search", "arguments": {"q": "docs"}},
+    tool_result=tool_output,
+)
+assert result["allowed"]
+```
 
-- Get started with [ChatGPT and LLM Guard](./examples/openai_api.py).
-- Deploy LLM Guard as [API](./docs/api/overview.md)
+Requires **Python 3.10–3.12**. Upgrade pip if install fails: `python -m pip install --upgrade pip`.
+
+**Examples**: [ChatGPT + LLM Guard](./examples/openai_api.py) · [API](./docs/api/overview.md)
 
 ## Supported scanners
+
+### Agentic scanners (OWASP Agentic ASI01–ASI10 text/policy layer)
+
+Use via `llm_guard.agent` or `scan_agent_step()`:
+
+| Scanner | Maps to |
+|---------|---------|
+| `GoalDrift` | ASI01 Goal hijack |
+| `ToolCallAllowlist` | ASI02 Tool misuse |
+| `IdentityPrivilege` | ASI03 Identity / privilege abuse |
+| `SupplyChain` + `ToolResult` | ASI04 Agentic supply chain / MCP poisoning |
+| `CodeAct` | ASI05 Unexpected code execution |
+| `MemoryWrite` | ASI06 Memory / context poisoning |
+| `InterAgentMessage` | ASI07 Insecure inter-agent communication |
+| `CascadingFailure` | ASI08 Cascading failures |
+| `FakeApproval` | ASI09 Human–agent trust exploitation |
+| `RogueAgent` | ASI10 Rogue agents |
+| `DecodeNormalize` | Encoded / obfuscated injection |
+
+These are **runtime text + tool-channel controls**. Pair them with real IAM, allowlists, and human approval in your agent host.
 
 ### Prompt scanners
 
@@ -63,6 +91,7 @@ pip install git+https://github.com/UnoDomination/llm-guard.git
 - [Sentiment](./docs/input_scanners/sentiment.md)
 - [TokenLimit](./docs/input_scanners/token_limit.md)
 - [Toxicity](./docs/input_scanners/toxicity.md)
+- Plus agent scanners above (`ToolCallAllowlist`, `ToolResult`, `CodeAct`, …)
 
 ### Output scanners
 

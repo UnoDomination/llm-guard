@@ -5,9 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 0.3.17 (community fork)
+## [0.3.18] - 2026-10-16 (community fork)
 
-Community-maintained continuation after upstream archive. Ports open PRs/issues from protectai/llm-guard.
+### Added
+- **Agentic security package** `llm_guard.agent` with OWASP Agentic ASI01–ASI10 oriented scanners:
+  `GoalDrift`, `ToolCallAllowlist`, `IdentityPrivilege`, `SupplyChain`, `ToolResult`, `CodeAct`,
+  `MemoryWrite`, `InterAgentMessage`, `CascadingFailure`, `FakeApproval`, `RogueAgent`, `DecodeNormalize`.
+- `scan_agent_step()` and `default_agent_scanners()` for per-step prompt / tool_call / tool_result / memory channels.
+- Re-exports via `llm_guard.input_scanners` and `get_scanner_by_name`.
 
 ### Fixed
 - Secrets redaction offset corruption with multiple secrets (upstream [#335](https://github.com/protectai/llm-guard/pull/335)).
