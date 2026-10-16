@@ -12,7 +12,7 @@ _GOAL_HIJACK_PATTERNS: list[re.Pattern[str]] = [
         re.IGNORECASE,
     ),
     re.compile(
-        r"(new|updated|revised)\s+(objective|goal|mission)\s+(is|will\s+be|:)",
+        r"(new|updated|revised)\s+(objective|goal|mission)\s*(?:is|will\s+be|:)",
         re.IGNORECASE,
     ),
     re.compile(
@@ -38,8 +38,8 @@ class GoalDrift:
     """
     Detect attempts to replace the agent's session goal / mission (ASI01).
 
-    When an ``original_goal`` is set for the session, prompts that try to
-    hijack or replace that mission are marked invalid.
+    Hijack phrasing is blocked regardless of session goal; ``original_goal`` is
+    optional context for logging and future semantic checks.
     """
 
     def __init__(self, original_goal: str | None = None) -> None:
@@ -62,17 +62,14 @@ class GoalDrift:
         if not prompt or not prompt.strip():
             return prompt, True, -1.0
 
-        if not self._original_goal:
-            LOGGER.debug("No original goal set; skipping goal-drift check")
-            return prompt, True, -1.0
-
+        # Hijack phrasing is itself the threat; original_goal is optional context.
         for pattern in _GOAL_HIJACK_PATTERNS:
             match = pattern.search(prompt)
             if match:
                 LOGGER.warning(
                     "Goal drift / mission hijack detected",
                     match=match.group(0)[:120],
-                    original_goal=self._original_goal[:80],
+                    original_goal=(self._original_goal or "")[:80] or None,
                 )
                 return prompt, False, 1.0
 

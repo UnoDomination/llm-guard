@@ -53,7 +53,8 @@ _PRIVILEGE_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
         "sudo_mode",
         re.compile(
             r"\b(enable|enter|activate)\s+(sudo|god|unrestricted|developer)\s+mode\b|"
-            r"\byou\s+have\s+(full|unrestricted)\s+(access|permissions?|privileges?)\b",
+            r"\byou\s+have\s+(?:full|unrestricted)(?:\s+(?:full|unrestricted))?\s+"
+            r"(access|permissions?|privileges?)\b",
             re.IGNORECASE,
         ),
     ),

@@ -7,7 +7,10 @@ from llm_guard.util import get_logger
 LOGGER = get_logger()
 
 _CASCADE = [
-    re.compile(r"propagate\s+(this\s+)?(error|failure|signal)\s+to\s+all\s+agents", re.I),
+    re.compile(
+        r"propagate\s+(?:this\s+)?(?:(?:error|failure|signal)\s+)+to\s+all\s+agents",
+        re.I,
+    ),
     re.compile(r"retry\s+with\s+elevated\s+privileges", re.I),
     re.compile(r"cascade\s+(the\s+)?(failure|attack|instruction)", re.I),
     re.compile(r"fan[- ]out\s+(this\s+)?(malicious\s+)?(task|instruction)", re.I),

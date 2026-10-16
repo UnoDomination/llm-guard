@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `MemoryWrite`, `InterAgentMessage`, `CascadingFailure`, `FakeApproval`, `RogueAgent`, `DecodeNormalize`.
 - `scan_agent_step()` and `default_agent_scanners()` for per-step prompt / tool_call / tool_result / memory channels.
 - Re-exports via `llm_guard.input_scanners` and `get_scanner_by_name`.
+- Expanded unit + ASI battery coverage (117 ASI cases across ASI01–ASI10 + encoded injection).
+
+### Changed
+- `GoalDrift` blocks hijack phrasing even when no session `original_goal` is configured (goal is optional context).
 
 ### Fixed
 - Secrets redaction offset corruption with multiple secrets (upstream [#335](https://github.com/protectai/llm-guard/pull/335)).
