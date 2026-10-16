@@ -92,14 +92,13 @@ pip install git+https://github.com/UnoDomination/llm-guard.git
 
 LLM Guard is an open source solution.
 We are committed to a transparent development process and highly appreciate any contributions.
-Whether you are helping us fix bugs, propose new features, improve our documentation or spread the word,
-we would love to have you as part of our community.
 
-- Give us a ⭐️ github star ⭐️ on the top of this page to support what we're doing,
-  it means a lot for open source projects!
-- Read our [docs](./docs/index.md) for more info about how to use and customize LLM Guard.
-- Post a [GitHub Issue](https://github.com/UnoDomination/llm-guard/issues) to submit a bug report, feature request, or suggest an improvement.
-- To contribute to the package, check out our [contribution guidelines](./CONTRIBUTING.md), and open a PR.
+**Contact:** there is no public email. [Open a GitHub Issue](https://github.com/UnoDomination/llm-guard/issues/new) and the maintainer will be notified. For security reports, see [SECURITY.md](./SECURITY.md).
+
+- Star the repo if this is useful
+- Read the [docs](./docs/index.md)
+- [Open an issue](https://github.com/UnoDomination/llm-guard/issues) for bugs, questions, or feature ideas
+- See [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a PR
 
 ## Credits
 

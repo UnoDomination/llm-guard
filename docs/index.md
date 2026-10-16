@@ -29,8 +29,10 @@ Requires Python 3.9+. See [Installation](./get_started/installation.md) for more
 
 ## Community and contributing
 
+No public email. [Open a GitHub Issue](https://github.com/UnoDomination/llm-guard/issues/new) and the maintainer will be notified. Security: see [SECURITY.md](https://github.com/UnoDomination/llm-guard/blob/main/SECURITY.md).
+
 - Star the [repo](https://github.com/UnoDomination/llm-guard) if this is useful
-- Open an [issue](https://github.com/UnoDomination/llm-guard/issues)
+- [Open an issue](https://github.com/UnoDomination/llm-guard/issues)
 - Read [CONTRIBUTING.md](https://github.com/UnoDomination/llm-guard/blob/main/CONTRIBUTING.md) before opening a PR
 
 ## Credits
