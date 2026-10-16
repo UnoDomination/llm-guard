@@ -1,23 +1,25 @@
-> [!WARNING]
-> **THIS PROJECT HAS BEEN ARCHIVED.**
-> 
-> This project and its associated models on [Hugging Face](https://huggingface.co/protectai) are no longer under active development or maintained.
+> [!NOTE]
+> **Community-maintained fork.** The upstream [protectai/llm-guard](https://github.com/protectai/llm-guard) repository was archived on Jul 9, 2026 and is no longer maintained. This fork continues development under the MIT license. Upstream Hugging Face models are also unmaintained — we will refresh or replace them over time.
+>
+> Original project by [Protect AI](https://protectai.com/). Not affiliated with Protect AI or Palo Alto Networks.
 
 # LLM Guard - The Security Toolkit for LLM Interactions
 
-LLM Guard by [Protect AI](https://protectai.com/llm-guard) is a comprehensive tool designed to fortify the security of Large Language Models (LLMs).
+LLM Guard is a comprehensive tool designed to fortify the security of Large Language Models (LLMs).
 
 [**Documentation**](https://protectai.github.io/llm-guard/) | [**Playground**](https://huggingface.co/spaces/ProtectAI/llm-guard-playground) | [**Changelog**](https://protectai.github.io/llm-guard/changelog/)
 
 [![GitHub
-stars](https://img.shields.io/github/stars/protectai/llm-guard.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/protectai/llm-guard/stargazers/)
+stars](https://img.shields.io/github/stars/UnoDomination/llm-guard.svg?style=social&label=Star&maxAge=2592000)](https://github.com/UnoDomination/llm-guard/stargazers/)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![PyPI - Python Version](https://img.shields.io/pypi/v/llm-guard)](https://pypi.org/project/llm-guard)
-[![Downloads](https://static.pepy.tech/badge/llm-guard)](https://pepy.tech/project/llm-guard)
-[![Downloads](https://static.pepy.tech/badge/llm-guard/month)](https://pepy.tech/project/llm-guard)
 
-<a href="https://mlsecops.com/slack"><img src="https://github.com/protectai/llm-guard/blob/main/docs/assets/join-our-slack-community.png?raw=true" width="200" alt="Join Our Slack Community"></a>
+> **Install note:** `pip install llm-guard` still points at the last upstream release on PyPI (`0.3.16`). Install from this repo until a community package is published:
+>
+> ```sh
+> pip install git+https://github.com/UnoDomination/llm-guard.git
+> ```
 
 ## What is LLM Guard?
 
